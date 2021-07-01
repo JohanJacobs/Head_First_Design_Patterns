@@ -7,7 +7,7 @@ int main()
 {
     std::cout << "Hello Head First Design Patterns!\n";
 
-    std::cout << "\n\n Mallard Duck: \n";
+    std::cout << "\n\nMallard Duck: \n";
     Duck *mallard = new(MallardDuck);
     mallard->PerformQuack();
     mallard->PerformFly();

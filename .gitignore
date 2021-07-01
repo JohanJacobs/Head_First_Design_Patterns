@@ -1,0 +1,6 @@
+**/bin
+**/bin-int
+**.vcx*
+**.sln
+.vs
+.vscode
