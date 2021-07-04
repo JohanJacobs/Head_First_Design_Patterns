@@ -12,3 +12,4 @@ workspace "Head_First_Design_Patterns"
 
 include "Chapter1_Strategy_Pattern"
 include "Chapter2_Observer_Pattern"
+include "Chapter3_Decorator_Pattern"

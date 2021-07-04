@@ -7,8 +7,8 @@ project "Chapter2_ObserverPattern"
 	
 	files 
 	{
-		"%{wks.location}/Chapter2_Observer_Pattern/**.h",
-		"%{wks.location}/Chapter2_Observer_Pattern/**.cpp"
+		"src/**.h",
+		"src/**.cpp"
 	}
 	
 	filter "system:windows"

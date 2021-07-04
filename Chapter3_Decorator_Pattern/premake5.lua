@@ -1,4 +1,4 @@
-project "Chapter1_StrategyPattern"
+project "Chapter3_DecoratorPattern"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
@@ -14,10 +14,10 @@ project "Chapter1_StrategyPattern"
 	filter "system:windows"
 		systemversion "latest"
 		
-	filter "configurations:Debug"
-		
+	filter "configurations:Debug"		
 		defines {"DEBUG"}
 		symbols "On"
+		
 	filter "configurations:Release"
 		defines {"NDEBUG"}
 		optimize "On"

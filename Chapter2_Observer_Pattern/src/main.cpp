@@ -6,6 +6,10 @@
 #include "WeatherSation.h"  // the subject (weathers station)
 #include "Displays.h"       // Weather displays
 
+/*
+    Observer Patter: One to many relationship where the Subject has many observers and share state with them
+*/
+
 /* Naive solution review 
 class WeaterData
 {
