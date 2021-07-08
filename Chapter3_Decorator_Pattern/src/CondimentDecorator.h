@@ -9,7 +9,7 @@
 	condiments have to implement GetDescription and GetCost
 
 	the class CondimentDecorator does not have to:
-		= take the beverage
+		= take the reference to beverage
 		= Implement GetDescription & GetCost. 
 	both of these can be done in the condiments classes. Moved them to this class as it was the same code over and over.
 
