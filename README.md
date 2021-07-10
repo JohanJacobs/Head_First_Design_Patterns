@@ -46,9 +46,16 @@
 >-Abstract Factory intent: create families of related objects without having to depend on their concrete classes.
 >Factories allow you to code against abstractions, not concrete classes.
 
-## OO Principles
+## Chapter 4 - Singleton Pattern
 
-  
+>**Singleton Pattern**: Ensures a class has only one instance, and provides a global point of access to it.
+>- Global access point to the instance, 
+>- Lazy evaluation
+>- Thread safety considerations
+>- Private constructor
+
+
+## OO Principles
 
 -  **Encapsulate what varies.**
 
