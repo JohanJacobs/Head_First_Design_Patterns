@@ -46,6 +46,7 @@
 >-Abstract Factory intent: create families of related objects without having to depend on their concrete classes.
 >Factories allow you to code against abstractions, not concrete classes.
 
+
 ## Chapter 4 - Singleton Pattern
 
 >**Singleton Pattern**: Ensures a class has only one instance, and provides a global point of access to it.
@@ -53,6 +54,17 @@
 >- Lazy evaluation
 >- Thread safety considerations
 >- Private constructor
+
+
+## Chapter 5 - Command Pattern
+
+>**Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operators**
+>- Command Pattern decouples an object, making a request from the one that knows how to perform it.
+>- Command object is at the center of decoupling and encapsulates a receiver with an action.
+>- Invokers makes a request of a Command object by calling execute().
+>- Invokers can be parameterized with Commands, even dynamically at runtime.
+>- Macro Commands are a simple extension of command that allow multiple commands to be invoked.
+>- Smart Command objects implement the request themselves rather than delegating to a receiver (losing decoupling).
 
 
 ## OO Principles
