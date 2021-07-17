@@ -47,7 +47,7 @@
 >Factories allow you to code against abstractions, not concrete classes.
 
 
-## Chapter 4 - Singleton Pattern
+## Chapter 5 - Singleton Pattern
 
 >**Singleton Pattern**: Ensures a class has only one instance, and provides a global point of access to it.
 >- Global access point to the instance, 
@@ -56,7 +56,7 @@
 >- Private constructor
 
 
-## Chapter 5 - Command Pattern
+## Chapter 6 - Command Pattern
 
 >**Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operators**
 >- Command Pattern decouples an object, making a request from the one that knows how to perform it.
