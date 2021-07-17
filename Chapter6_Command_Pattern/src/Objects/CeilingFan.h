@@ -1,5 +1,6 @@
 #pragma once
 #include "ObjectInterface.h"
+
 namespace Objects
 {
 	enum class CeilingFanSpeed

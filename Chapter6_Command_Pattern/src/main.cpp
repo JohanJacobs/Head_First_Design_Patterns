@@ -1,6 +1,8 @@
 #include <iostream>
 #include <memory>
 
+#include "Core/Base.h"
+
 #include "Objects/Lights.h"
 #include "Commands/LightCommands.h"
 
@@ -15,29 +17,18 @@
 
 #include "RemoteControl/RemoteControl.h"
 #include "RemoteControl/RemoteTest.h"
+
 void TestCommand()
 {
-	std::shared_ptr<Objects::Light> light = std::make_shared<Objects::Light>("Living Room");
-	std::shared_ptr<Commands::LightCommands::LightOnCommand> lightOnCommand = std::make_shared<Commands::LightCommands::LightOnCommand>(light);
-	std::shared_ptr<Commands::LightCommands::LightOffCommand> lightOffCommand = std::make_shared<Commands::LightCommands::LightOffCommand>(light);
+	Ref<Objects::Light> light = std::make_shared<Objects::Light>("Living Room");
+	Ref<Commands::LightCommands::LightOnCommand> lightOnCommand = CreateRef<Commands::LightCommands::LightOnCommand>(light);
+	Ref<Commands::LightCommands::LightOffCommand> lightOffCommand = CreateRef<Commands::LightCommands::LightOffCommand>(light);
 	Remote::RemoteTest rcTest;
 	rcTest.SetCommand(lightOnCommand);
 	rcTest.buttonWasPressed();
 	rcTest.SetCommand(lightOffCommand);
 	rcTest.buttonWasPressed();
 }
-
-
-// template functions to help create Shared_ptr objects 
-template<typename T> 
-using Ref = std::shared_ptr<T>;
-
-template <typename T, typename ... Args>
-constexpr Ref<T> CreateRef(Args&& ... args)
-{
-	return std::make_shared<T>(std::forward<Args>(args) ...);
-}
-
 
 int main()
 {

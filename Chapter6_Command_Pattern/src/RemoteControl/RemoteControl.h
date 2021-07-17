@@ -16,13 +16,13 @@ namespace Remote
 			// set all command buttons to "No Command"
 			for (size_t index = 0; index < 7; index++)
 			{
-				m_OnCommands[index]  = std::make_shared<Commands::NoCommand>();
-				m_OffCommands[index] = std::make_shared<Commands::NoCommand>();
+				m_OnCommands[index]  = CreateRef<Commands::NoCommand>();
+				m_OffCommands[index] = CreateRef<Commands::NoCommand>();
 			}
 		}
 
 		/* assigns an on and off command to a slot */
-		void SetCommand(size_t slot, std::shared_ptr<Commands::CommandInterface> onCommand, std::shared_ptr<Commands::CommandInterface> offCommand)
+		void SetCommand(size_t slot, Ref<Commands::CommandInterface> onCommand, Ref<Commands::CommandInterface> offCommand)
 		{
 			m_OnCommands[slot]  = onCommand;
 			m_OffCommands[slot] = offCommand;
@@ -51,8 +51,7 @@ namespace Remote
 		}
 
 	private:
-		std::array<std::shared_ptr<Commands::CommandInterface>, 7> m_OnCommands;
-		std::array<std::shared_ptr<Commands::CommandInterface>, 7> m_OffCommands;
-
+		std::array<Ref<Commands::CommandInterface>, 7> m_OnCommands;
+		std::array<Ref<Commands::CommandInterface>, 7> m_OffCommands;
 	};
 }

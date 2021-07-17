@@ -9,7 +9,7 @@ namespace Objects
 	public:
 		Stereo(const std::string& name) : m_Name{ name } { }
 
-		void On()  { std::cout << GetName() << m_Name << " on\n"; }
+		void On() { std::cout << GetName() << m_Name << " on\n"; }
 		void Off() { std::cout << GetName() << m_Name << " off\n"; }
 		void SetCD() { std::cout << GetName() << m_Name << " Set CD\n"; }
 		void SetRadio() { std::cout << GetName() << m_Name << " Set Radio\n"; }
