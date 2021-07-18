@@ -15,7 +15,7 @@ namespace Objects
 		void SetRadio() { std::cout << GetName() << m_Name << " Set Radio\n"; }
 		void SetDVD() { std::cout << GetName() << m_Name << " Set DVD\n"; }
 		void SetVolume(int volume) { m_Volume = volume; std::cout << GetName() << m_Name << " Set Volume to " <<std::to_string(m_Volume) << "\n"; }
-
+		int GetVolume() const { return m_Volume; }
 		std::string GetName() const override
 		{
 			return m_Name + " Stereo";

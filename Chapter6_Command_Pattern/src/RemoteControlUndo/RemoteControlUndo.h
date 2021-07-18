@@ -1,22 +1,23 @@
 #pragma once
+#pragma once
 #include <array>
 #include <string>
-#include "Core/Base.h"
+
 #include "Commands/CommandInterface.h"
 #include "Commands/NoCommand.h"
 
 namespace Remote
 {
-	class RemoteControl
+	class RemoteControlUndo
 	{
 	public:
 		/* Create a Remote control */
-		RemoteControl()
+		RemoteControlUndo()
 		{
 			// set all command buttons to "No Command"
 			for (size_t index = 0; index < 7; index++)
 			{
-				m_OnCommands[index]  = CreateRef<Commands::NoCommand>();
+				m_OnCommands[index] = CreateRef<Commands::NoCommand>();
 				m_OffCommands[index] = CreateRef<Commands::NoCommand>();
 			}
 		}
@@ -24,7 +25,7 @@ namespace Remote
 		/* assigns an on and off command to a slot */
 		void SetCommand(size_t slot, Ref<Commands::CommandInterface> onCommand, Ref<Commands::CommandInterface> offCommand)
 		{
-			m_OnCommands[slot]  = onCommand;
+			m_OnCommands[slot] = onCommand;
 			m_OffCommands[slot] = offCommand;
 		}
 
@@ -38,12 +39,18 @@ namespace Remote
 		void OffButtonWasPushed(size_t slot)
 		{
 			m_OffCommands[slot]->Execute();
+			m_UndoCommand = m_OffCommands[slot];
+		}
+
+		void UndoButtonWasPushed(size_t slot)
+		{
+			m_UndoCommand->Undo();
 		}
 
 		std::string ToString()
 		{
 			std::string msg = "\n----- Remote Control -----\n";
-			for (size_t index=0; index < 7; index ++)
+			for (size_t index = 0; index < 7; index++)
 			{
 				msg += "[ slot " + std::to_string(index) + " ] " + m_OnCommands[index]->GetName() + " / " + m_OffCommands[index]->GetName() + "\n";
 			}
@@ -53,5 +60,6 @@ namespace Remote
 	private:
 		std::array<Ref<Commands::CommandInterface>, 7> m_OnCommands;
 		std::array<Ref<Commands::CommandInterface>, 7> m_OffCommands;
+		Ref<Commands::CommandInterface> m_UndoCommand;
 	};
 }

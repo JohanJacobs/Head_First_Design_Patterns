@@ -21,6 +21,7 @@ namespace Commands
 			LightOnCommand(std::shared_ptr<Objects::Light> light) : m_Light{ light } { }
 			std::string GetName() const override { return m_Light->GetName() + LightCommand::GetName() + " on";}
 			void Execute() override{ m_Light->On(); }
+			void Undo() override { m_Light->Off(); }
 		private:
 			std::shared_ptr<Objects::Light> m_Light;
 		};
@@ -32,6 +33,7 @@ namespace Commands
 			LightOffCommand(std::shared_ptr<Objects::Light> light) : m_Light{ light } {}
 			std::string GetName() const override { return LightCommand::GetName() + " off"; }
 			void Execute() override { m_Light->Off(); }
+			void Undo() override { m_Light->On(); }
 		private:
 			std::shared_ptr<Objects::Light> m_Light;
 		};

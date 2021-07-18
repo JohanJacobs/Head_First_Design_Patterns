@@ -9,7 +9,12 @@ namespace Commands
 
 		void Execute() override
 		{
-			std::cout << "  NoCommand\n";
+			std::cout << "  NoCommand Execute\n";
+		}
+
+		void Undo() override
+		{
+			std::cout << "  NoCommand Undo\n";
 		}
 
 
