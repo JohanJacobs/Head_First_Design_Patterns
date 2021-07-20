@@ -66,6 +66,14 @@
 >- Macro Commands are a simple extension of command that allow multiple commands to be invoked.
 >- Smart Command objects implement the request themselves rather than delegating to a receiver (losing decoupling).
 
+## Chapter 7 - Adapter Pattern
+>**Converts the interface of a class into another interface the clients expect. Adapter lets classes wrok together that couldn't otherwise because of incompatible interfaces**
+>- Object Adapter: Uses composition and the adaptee need to be passed in.
+>- Class Adapter: Uses Multiple inheritance.
+
+## Chapter 7 - Facade Pattern 
+>**Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higherlevel interface that makes the subsystem easier to use**
+>- Focus on simplifying an interface
 
 ## OO Principles
 
@@ -80,7 +88,8 @@
 -  **Open Close Principle: Open to Extending, Closed for modification.**
 
 -  **The Dependency inversion Principle: Depend upon abstractions. Do not depend upon concrete classes. Reducing dependencies to concrete classes in code is a good thing**
-  
+
+-  **Principle of Least Knowledge: Talk only to your immediate freinds**
 
 ## OO Basics
 
