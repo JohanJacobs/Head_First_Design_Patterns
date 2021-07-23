@@ -75,6 +75,19 @@
 >**Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higherlevel interface that makes the subsystem easier to use**
 >- Focus on simplifying an interface
 
+## Chapter 8 - Template Method Pattern
+>**Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure**
+>- Defines the steps of the algorithm, deferring to subclasses for implementation of those steps
+>- Important technique for code reuse
+>- Template class may define concrete methods, abstract methods and hooks
+>- Abstract methods are implemented by subclasses
+>- Hooks are methods that may be overridden in the subclass
+>- Template's primary algorithm method should be declared final to ensure it can not be overridden
+>- Strategy and Template method patterns both encapsulated alorithms, 
+>- Strategy by encapsulation Template by inheritance.
+>- Factory Method is a specialization of Template method.
+
+
 ## OO Principles
 
 -  **Encapsulate what varies.**
@@ -90,6 +103,8 @@
 -  **The Dependency inversion Principle: Depend upon abstractions. Do not depend upon concrete classes. Reducing dependencies to concrete classes in code is a good thing**
 
 -  **Principle of Least Knowledge: Talk only to your immediate freinds**
+
+- **Don't call us we'll call you: Super class call subclasses, subclasses don't call super class methods**
 
 ## OO Basics
 
