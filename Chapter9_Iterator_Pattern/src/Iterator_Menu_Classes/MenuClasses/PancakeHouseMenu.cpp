@@ -1,4 +1,5 @@
 #include "PancakeHouseMenu.h"
+
 namespace Itertor_Menu
 {
 	PancakeHouseMenu::PancakeHouseMenu()
@@ -18,4 +19,10 @@ namespace Itertor_Menu
 		*/
 		m_MenuItems.emplace_back(std::make_shared<MenuItem>(name, description, IsVegetarian, price));
 	}
+
+	std::shared_ptr<Itertor_Menu::IteratorInterface> PancakeHouseMenu::CreateIterator()
+	{
+		return std::make_shared<PancakeHouseMenuIterator>(m_MenuItems);
+	}
+
 }

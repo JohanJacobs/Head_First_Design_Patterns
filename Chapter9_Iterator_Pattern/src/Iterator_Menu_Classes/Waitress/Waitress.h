@@ -7,6 +7,8 @@
 
 #include "Iterator_Menu_Classes/Iterators/IteratorInterface.h"
 
+#include "Iterator_Menu_Classes/MenuClasses/MenuInterface.h"
+
 #include "MenuItem/MenuItem.h"
 
 
@@ -15,7 +17,7 @@ namespace Itertor_Menu
 	class Waitress
 	{
 	public:
-		Waitress(PancakeHouseMenu& pancakeHouse, DinerMenu& dinerMenu)
+		Waitress(MenuInterface& pancakeHouse, MenuInterface& dinerMenu)
 			:m_PancakeHouseMenu{ pancakeHouse }, m_DinerMenu{ dinerMenu }
 		{
 		}
@@ -41,7 +43,7 @@ namespace Itertor_Menu
 			}
 		}
 	private:
-		PancakeHouseMenu& m_PancakeHouseMenu;
-		DinerMenu& m_DinerMenu;
+		MenuInterface& m_PancakeHouseMenu;
+		MenuInterface& m_DinerMenu;
 	};
 }
