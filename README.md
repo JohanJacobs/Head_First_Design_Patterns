@@ -88,6 +88,13 @@
 >- Factory Method is a specialization of Template method.
 
 
+## Chapter 9 - Iterator Pattern
+>** Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation**
+>- Aggregate: a container that has elements in it, Eg list, vector, array, hasmap etc.
+>- Iterator pattern places the task of traversal ( Responcibility ) on the iterator object and not the container / class of the object
+>- Iterator allows access to an aggregate's elements without exposing its internal structure
+>- Cohesion: measure of how closely a class or module supports a single purpose or responsibility
+
 ## OO Principles
 
 -  **Encapsulate what varies.**
@@ -104,7 +111,9 @@
 
 -  **Principle of Least Knowledge: Talk only to your immediate freinds**
 
-- **Don't call us we'll call you: Super class call subclasses, subclasses don't call super class methods**
+-  **Don't call us we'll call you: Super class call subclasses, subclasses don't call super class methods**
+
+-  **A class should have only one reason to change**
 
 ## OO Basics
 

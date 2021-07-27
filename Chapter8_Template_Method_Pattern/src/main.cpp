@@ -13,7 +13,7 @@ void BeverageTestDrive()
 int main ()
 {
     std::cout << "Hello Head First Design Patterns!\n";
-	std::cout << "Chapter 8 - Tempalte Method Pattern!\n";
+	std::cout << "Chapter 8 - Template Method Pattern!\n";
       
     //  Beverageclass with hook  
     BeverageTestDrive();   
