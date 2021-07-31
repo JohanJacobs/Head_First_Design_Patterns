@@ -1,8 +1,8 @@
-#include "PancakeHouseMenu.h"
+#include "PancakeHouseMenuWithIterator.h"
 
 namespace Itertor_Menu
 {
-	PancakeHouseMenu::PancakeHouseMenu()
+	PancakeHouseMenuWithIterator::PancakeHouseMenuWithIterator()
 	{
 		AddItem("K&B's Pancake Breakfast", "Pancakes with scrambled eggs, and toast", true, 2.99);
 		AddItem("Regular Pancake Breakfast", "Pancakes with fried eggs, sausage", false, 2.99);
@@ -10,7 +10,7 @@ namespace Itertor_Menu
 		AddItem("Waffles", "Waffles, with your choice of blueberries or strawberries", true, 3.59);
 	}
 
-	void PancakeHouseMenu::AddItem(const std::string& name, const std::string description, bool IsVegetarian, double price)
+	void PancakeHouseMenuWithIterator::AddItem(const std::string& name, const std::string description, bool IsVegetarian, double price)
 	{
 		/*
 		*   removed the two lines of code in favor of using emplace_back
@@ -20,7 +20,7 @@ namespace Itertor_Menu
 		m_MenuItems.emplace_back(std::make_shared<MenuItem>(name, description, IsVegetarian, price));
 	}
 
-	std::shared_ptr<Itertor_Menu::IteratorInterface> PancakeHouseMenu::CreateIterator()
+	std::shared_ptr<Itertor_Menu::IteratorInterface> PancakeHouseMenuWithIterator::CreateIterator()
 	{
 		return std::make_shared<PancakeHouseMenuIterator>(m_MenuItems);
 	}

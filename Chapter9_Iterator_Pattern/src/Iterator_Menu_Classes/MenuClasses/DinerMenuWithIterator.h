@@ -10,11 +10,11 @@
 namespace Itertor_Menu
 {
 	
-	class DinerMenu:public MenuInterface
+	class DinerMenuWithIterator :public MenuInterface
 	{
 	public:
 		static constexpr int MAX_ITEMS{ 6 };
-		DinerMenu();
+		DinerMenuWithIterator();
 		void AddItem(const std::string& name, const std::string description, bool IsVegetarian, double price);
 		
 		std::shared_ptr<IteratorInterface>  CreateIterator() override 

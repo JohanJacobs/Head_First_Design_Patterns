@@ -1,9 +1,9 @@
-#include "Iterator_Menu_Classes/MenuClasses/DinerMenu.h"
+#include "Iterator_Menu_Classes/MenuClasses/DinerMenuWithIterator.h"
 #include <iostream>
 namespace Itertor_Menu
 {
 	
-	DinerMenu::DinerMenu()
+	DinerMenuWithIterator::DinerMenuWithIterator()
 	{
 		AddItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
 		AddItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 2.99);
@@ -16,7 +16,7 @@ namespace Itertor_Menu
 		//AddItem("7", "7", false, 3.05); // this gives an error
 	}
 
-	void DinerMenu::AddItem(const std::string& name, const std::string description, bool IsVegetarian, double price)
+	void DinerMenuWithIterator::AddItem(const std::string& name, const std::string description, bool IsVegetarian, double price)
 	{
 		if (m_NumberOfItems >= MAX_ITEMS)
 		{

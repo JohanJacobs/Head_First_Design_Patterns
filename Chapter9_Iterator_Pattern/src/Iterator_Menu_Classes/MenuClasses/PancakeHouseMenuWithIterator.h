@@ -8,10 +8,10 @@
 
 namespace Itertor_Menu
 {
-	class PancakeHouseMenu: public MenuInterface
+	class PancakeHouseMenuWithIterator: public MenuInterface
 	{
 	public:
-		PancakeHouseMenu();
+		PancakeHouseMenuWithIterator();
 		void AddItem(const std::string& name, const std::string description, bool IsVegetarian, double price);
 
 		std::shared_ptr<IteratorInterface> CreateIterator() override;

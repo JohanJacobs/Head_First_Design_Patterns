@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "IteratorInterface.h"
-#include "Iterator_Menu_Classes/MenuClasses/DinerMenu.h"
+#include "Iterator_Menu_Classes/MenuClasses/DinerMenuWithIterator.h"
 
 namespace Itertor_Menu
 {

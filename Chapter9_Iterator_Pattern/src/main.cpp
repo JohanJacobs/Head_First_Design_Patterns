@@ -2,7 +2,7 @@
 
 #include "Default_Menu_Classes/DefaultMenuTest.h"
 
-#include "Iterator_Menu_Classes/MenuTestDrive.h"
+#include "Iterator_Menu_Classes/MenuTestDriveWithIterator.h"
 
 int main()
 {
@@ -14,6 +14,6 @@ int main()
 	//defaultMenu.Run();
 
 	//Testing the first iterator implementation with updated waitress code 
-	Itertor_Menu::MenuTestDrive test;
+	Itertor_Menu::MenuTestDriveWithIterator test;
 	test.Run();
 }
