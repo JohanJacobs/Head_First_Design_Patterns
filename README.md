@@ -88,12 +88,20 @@
 >- Factory Method is a specialization of Template method.
 
 
-## Chapter 9 - Iterator Pattern
+## Chapter 9 - Iterator Pattern 
 >** Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation**
 >- Aggregate: a container that has elements in it, Eg list, vector, array, hasmap etc.
 >- Iterator pattern places the task of traversal ( Responcibility ) on the iterator object and not the container / class of the object
 >- Iterator allows access to an aggregate's elements without exposing its internal structure
 >- Cohesion: measure of how closely a class or module supports a single purpose or responsibility
+
+
+## Chapter 9 - Composite Pattern
+>** Allows you to compose objects into 'tree data structures' to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly**
+>- Build structures of objects in the form of tress that contain both compositions of objects and individual objects as nodes.
+>- Apply the same operations over both composites and individual
+
+
 
 ## OO Principles
 

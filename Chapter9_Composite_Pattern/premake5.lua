@@ -1,4 +1,4 @@
-project "Chapter9_Composite_Pattern"
+project "Chapter9_Iterator_Pattern"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
