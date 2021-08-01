@@ -101,6 +101,8 @@
 >- Build structures of objects in the form of tress that contain both compositions of objects and individual objects as nodes.
 >- Apply the same operations over both composites and individual
 
+## Chapter 10 - State Pattern 
+>**Allows an object to alter its behavior when its internal state changes. The Object will appear to change its class**
 
 
 ## OO Principles
