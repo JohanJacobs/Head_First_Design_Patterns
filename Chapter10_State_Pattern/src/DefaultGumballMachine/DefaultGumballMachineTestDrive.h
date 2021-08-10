@@ -1,51 +1,44 @@
 #pragma once
-#include "core/base.h"
-
+#include "base.h"
 #include "DefaultGumballMachine.h"
 
-namespace StatePattern
+class DefaultGumballMachineTestDrive
 {
-	namespace DefaultImplementation
+public:
+	DefaultGumballMachineTestDrive()
 	{
-		class DefaultGumballMachineTestDrive
-		{
-		public:
-			DefaultGumballMachineTestDrive()
-			{
-				GumballMachine gumballMachine(5);
-				std::cout << "Testing Gumball Machine: \n";
+		GumballMachine gumballMachine(5);
+		std::cout << "Testing Gumball Machine: \n";
 				
-				gumballMachine.PrintState();
+		gumballMachine.PrintState();
 
-				gumballMachine.InsertQuarter();
-				gumballMachine.TurnCrank();
+		gumballMachine.InsertQuarter();
+		gumballMachine.TurnCrank();
 				
-				gumballMachine.PrintState();
+		gumballMachine.PrintState();
 
-				gumballMachine.InsertQuarter();
-				gumballMachine.EjectQuarter();
-				gumballMachine.TurnCrank();
+		gumballMachine.InsertQuarter();
+		gumballMachine.EjectQuarter();
+		gumballMachine.TurnCrank();
 
-				gumballMachine.PrintState();
+		gumballMachine.PrintState();
 
-				gumballMachine.InsertQuarter();
-				gumballMachine.TurnCrank();
-				gumballMachine.InsertQuarter();
-				gumballMachine.TurnCrank();
-				gumballMachine.EjectQuarter();
+		gumballMachine.InsertQuarter();
+		gumballMachine.TurnCrank();
+		gumballMachine.InsertQuarter();
+		gumballMachine.TurnCrank();
+		gumballMachine.EjectQuarter();
 
-				gumballMachine.PrintState();
+		gumballMachine.PrintState();
 
-				gumballMachine.InsertQuarter();
-				gumballMachine.InsertQuarter();
-				gumballMachine.TurnCrank();
-				gumballMachine.InsertQuarter();
-				gumballMachine.TurnCrank();
-				gumballMachine.InsertQuarter();
-				gumballMachine.TurnCrank();
+		gumballMachine.InsertQuarter();
+		gumballMachine.InsertQuarter();
+		gumballMachine.TurnCrank();
+		gumballMachine.InsertQuarter();
+		gumballMachine.TurnCrank();
+		gumballMachine.InsertQuarter();
+		gumballMachine.TurnCrank();
 
-				gumballMachine.PrintState();
-			}
-		};
+		gumballMachine.PrintState();
 	}
-}
+};	

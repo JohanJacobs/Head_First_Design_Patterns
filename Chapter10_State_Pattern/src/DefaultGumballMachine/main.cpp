@@ -1,13 +1,15 @@
 #include <iostream>
-#include "core/base.h"
+#include "base.h"
 
 // Default Gumball machine 
-#include "DefaultGumballMachine/DefaultGumballMachineTestDrive.h"
+#include "DefaultGumballMachineTestDrive.h"
+
 
 int main()
 {
 	std::cout << "Hello Head First Design Patterns!\n";
 	std::cout << "Chapter 10 - State Pattern!\n"; 
 
-	StatePattern::DefaultImplementation::DefaultGumballMachineTestDrive td;
+	// default implementation
+	DefaultGumballMachineTestDrive td;
 }
