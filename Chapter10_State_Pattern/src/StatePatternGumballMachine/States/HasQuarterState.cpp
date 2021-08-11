@@ -2,7 +2,7 @@
 #include "../GumballMachine/GumballMachine.h"
 
 
-HasQuarterState::HasQuarterState(GumballMachine* machine)
+HasQuarterState::HasQuarterState(std::shared_ptr<GumballMachine> machine)
 	:m_Machine{machine}
 {
 	

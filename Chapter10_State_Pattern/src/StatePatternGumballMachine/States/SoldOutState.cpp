@@ -1,6 +1,6 @@
 #include "SoldOutState.h"
 
-SoldOutState::SoldOutState(GumballMachine* machine)
+SoldOutState::SoldOutState(std::shared_ptr<GumballMachine> machine)
 	:m_Machine{machine}
 {
 

@@ -1,7 +1,7 @@
 #include "NoQuarterState.h"
 #include "../GumballMachine/GumballMachine.h"
 
-NoQuarterState::NoQuarterState(GumballMachine* machine)
+NoQuarterState::NoQuarterState(std::shared_ptr<GumballMachine> machine)
 	:m_Machine{ machine }
 {
 }

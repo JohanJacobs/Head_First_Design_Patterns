@@ -1,6 +1,7 @@
 #include "SoldState.h"
 #include "../GumballMachine/GumballMachine.h"
-SoldState::SoldState(GumballMachine* machine)
+
+SoldState::SoldState(std::shared_ptr<GumballMachine> machine)
 	:m_Machine{machine}
 {
 

@@ -6,7 +6,7 @@ class GumballMachine;
 class SoldOutState :public StateInterface
 {
 public:
-	SoldOutState(GumballMachine* machine);
+	SoldOutState(std::shared_ptr<GumballMachine> machine);
 
 	void InsertQuarter() override;
 
@@ -20,5 +20,5 @@ public:
 	std::string GetName() override;
 
 private:
-	GumballMachine* m_Machine;
+	std::shared_ptr<GumballMachine> m_Machine;
 };

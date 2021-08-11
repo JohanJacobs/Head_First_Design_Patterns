@@ -3,6 +3,7 @@
 class StateInterface
 {
 public:
+	
 	virtual void InsertQuarter();
 	virtual void EjectQuarter();
 	virtual void TurnCrank();

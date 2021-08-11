@@ -1,56 +1,55 @@
 #include "GumballMachine.h"
-
+#include "base.h"
 #include "../states/NoQuarterState.h"
 #include "../states/HasQuarterState.h"
 #include "../states/SoldState.h"
 #include "../states/SoldOutState.h"
 
 GumballMachine::GumballMachine(int count) 
-	: m_Count{ count }, 
-	m_NoQuarterState{nullptr}, 
-	m_HasQuarterState{nullptr},
-	m_SoldState{nullptr},
-	m_SoldOutState{nullptr}
+	: m_Count{ count }
 {
-	m_NoQuarterState = new NoQuarterState(this);
-	m_HasQuarterState = new HasQuarterState(this);
-	m_SoldState = new SoldState(this);
-	m_SoldOutState = new SoldOutState(this);
 
-	if (m_Count > 0)
-		m_CurrentState = m_NoQuarterState;
 }
 
 GumballMachine::~GumballMachine()
 {
-	m_CurrentState = nullptr;
-	delete m_NoQuarterState;
-	delete m_HasQuarterState;
-	delete m_SoldState;
-	delete m_SoldOutState;
+
 }
 
-void GumballMachine::SetState(StateInterface* newState)
+void GumballMachine::SetupStates()
+{
+	std::shared_ptr<GumballMachine> thisPtr = shared_from_this();
+	m_NoQuarterState = std::make_shared<NoQuarterState>(thisPtr);
+	m_HasQuarterState = std::make_shared<HasQuarterState>(shared_from_this());
+	m_SoldState = std::make_shared<SoldState>(shared_from_this());
+	m_SoldOutState = std::make_shared<SoldOutState>(shared_from_this());
+
+	if (m_Count > 0)
+		m_CurrentState = m_NoQuarterState;
+	else
+		m_CurrentState = m_SoldOutState;
+}
+void GumballMachine::SetState(std::shared_ptr<StateInterface> newState)
 {
 	m_CurrentState = newState;
 }
 
-StateInterface* GumballMachine::GetHasQuarterState()
+std::shared_ptr<StateInterface> GumballMachine::GetHasQuarterState()
 {
 	return m_HasQuarterState;
 }
 
-StateInterface* GumballMachine::GetNoQuarterState()
+std::shared_ptr<StateInterface> GumballMachine::GetNoQuarterState()
 {
 	return m_NoQuarterState;
 }
 
-StateInterface* GumballMachine::GetSoldState()
+std::shared_ptr<StateInterface> GumballMachine::GetSoldState()
 {
 	return m_SoldState;
 }
 
-StateInterface* GumballMachine::GetSoldOutState()
+std::shared_ptr<StateInterface> GumballMachine::GetSoldOutState()
 {
 	return m_SoldOutState;
 }
