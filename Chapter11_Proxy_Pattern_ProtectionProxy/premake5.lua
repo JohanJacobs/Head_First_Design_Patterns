@@ -7,13 +7,13 @@ project "Chapter11_Proxy_Pattern_ProtectionProxy"
 	
 	files 
 	{
-		"src/DefaultGumballMachine/**.h",
-		"src/DefaultGumballMachine/**.cpp"
+		"src/**.h",
+		"src/**.cpp"
 	}
 
 	includedirs
 	{
-		"src/core/"
+		"src/"		
 	}
 	
 	filter "system:windows"
