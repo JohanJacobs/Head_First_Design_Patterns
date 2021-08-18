@@ -104,6 +104,14 @@
 ## Chapter 10 - State Pattern 
 >**Allows an object to alter its behavior when its internal state changes. The Object will appear to change its class**
 
+## Chapter 11 - Proxy Pattern 
+>**Provide a surrogate or placeholder for another object to control access to it.**
+>- Control client access to an object when acccess is restricted or a resource is needed that is expensive to use / create.
+>- RemoteProxy: Manage interaction between a client and a remote object.
+>- VirtualProxy: Controls access to an object that is expensive to instantiate
+>- ProtectionProxy: Controls access to the methods of an object based on the caller
+>- Proxy and Decorator patterns have the same structure but differ in intent.  Proxy Control Access and Decorate adds Behaviour
+>- Proxy, as a wrapper, will increase the number of classes.
 
 ## OO Principles
 
