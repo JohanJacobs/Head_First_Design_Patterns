@@ -7,6 +7,7 @@ namespace DuckSim
 	class QuackableInterface
 	{
 	public:
+		/* Play a quack sounds of this particular duck */
 		virtual void Quack() const = 0;
 		virtual ~QuackableInterface() {}
 	private:
