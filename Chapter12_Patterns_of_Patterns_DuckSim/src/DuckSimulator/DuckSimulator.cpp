@@ -9,6 +9,8 @@
 #include "Ducks/DuckCall.h"
 #include "Ducks/RubberDuck.h"
 
+#include "Goose/Goose.h"
+#include "GooseAdapter/GooseAdapter.h"
 
 DuckSim::DuckSimulator::DuckSimulator()
 {
@@ -27,7 +29,6 @@ void DuckSim::DuckSimulator::Simulate()
 	std::shared_ptr<RedHeadDuck> readHeadDuck = std::make_shared<RedHeadDuck>();
 	std::shared_ptr<DuckCall> duckCall = std::make_shared<DuckCall>();
 	std::shared_ptr<RubberDuck> rubberDuck = std::make_shared<RubberDuck>();
-
 	std::cout << "\nDuck Simulator\n";
 
 	/* pass each duck to the simulate function */
@@ -35,6 +36,13 @@ void DuckSim::DuckSimulator::Simulate()
 	Simulate(readHeadDuck);
 	Simulate(duckCall);
 	Simulate(rubberDuck);
+
+
+	// create a goose and a goose adaptor so that the goose can work just like a duck
+	std::shared_ptr<Goose> goose = std::make_shared<Goose>();	
+	std::shared_ptr<GooseAdapter> gooseAdapter = std::make_shared<GooseAdapter>(goose);
+	Simulate(gooseAdapter);
+
 }
 
 /*
