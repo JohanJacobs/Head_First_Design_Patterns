@@ -19,7 +19,7 @@ namespace DuckSim
 		{}
 
 		/* converting the Goose Honk to a Duck Quack*/
-		void Quack() const override;
+		void Quack() override;
 
 	private:
 		std::shared_ptr<Goose> m_Goose; // the goose object

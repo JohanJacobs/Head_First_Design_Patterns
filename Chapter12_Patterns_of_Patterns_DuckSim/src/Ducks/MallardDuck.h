@@ -9,7 +9,7 @@ namespace DuckSim
 	{
 	public:
 		/* Play a quack sounds of this particular duck */
-		void Quack() const override; 
+		void Quack()  override; 
 
 	private:
 

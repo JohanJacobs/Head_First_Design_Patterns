@@ -6,7 +6,7 @@ namespace DuckSim
 	{
 	public:
 
-		void Quack() const override;
+		void Quack()  override;
 
 	private:
 	};
