@@ -8,5 +8,4 @@ int main()
 	std::cout << "Chapter 12 - Patterns of Patterns!\n";
 
 	DuckSim::DuckSimulator ds;
-
 }
