@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include "Quackable/QuackableInterface.h"
-
+#include "DuckAbstractFactoryInterface/DuckAbstractFactoryInterface.h"
 namespace DuckSim
 {
 	class DuckSimulator
@@ -9,7 +9,7 @@ namespace DuckSim
 	public:
 		DuckSimulator();
 		~DuckSimulator();
-		void Simulate();
+		void Simulate(std::shared_ptr<DuckAbstractFactoryInterface> factory);
 	private:
 		void Simulate(std::shared_ptr<QuackableInterface> duck);
 	};

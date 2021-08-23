@@ -3,22 +3,21 @@
 
 #include "DuckSimulator.h"
 
-#include "Ducks/MallardDuck.h"
-#include "Ducks/ReadHeadDuck.h"
-#include "Ducks/MallardDuck.h"
-#include "Ducks/DuckCall.h"
-#include "Ducks/RubberDuck.h"
 
-// adaptor for goose 
+// adapter for goose 
 #include "Goose/Goose.h"
 #include "GooseAdapter/GooseAdapter.h"
 
-//quack counter 
-#include "Quackcounter/QuackCounter.h"
+// Counting Quacks
+#include "QuackCounter/QuackCounter.h"
+
+// factory 
+#include "CountingDuckAbstractFactory/CountingDuckAbstractFactory.h"
 
 DuckSim::DuckSimulator::DuckSimulator()
 {
-	Simulate();
+	auto factory = std::make_shared<CountingDuckAbstractFactory>();
+	Simulate(factory);
 }
 
 DuckSim::DuckSimulator::~DuckSimulator()
@@ -26,18 +25,19 @@ DuckSim::DuckSimulator::~DuckSimulator()
 
 }
 
-void DuckSim::DuckSimulator::Simulate()
+void DuckSim::DuckSimulator::Simulate(std::shared_ptr<DuckAbstractFactoryInterface> factory)
 {
-	/* create all the ducks */
-	std::shared_ptr<QuackableInterface> mallardDuck  = std::make_shared<QuackCounter>(std::make_shared<MallardDuck>());
-	std::shared_ptr<QuackableInterface> readHeadDuck = std::make_shared<QuackCounter>(std::make_shared<RedHeadDuck>());
-	std::shared_ptr<QuackableInterface> duckCall     = std::make_shared<QuackCounter>(std::make_shared<DuckCall>());
-	std::shared_ptr<QuackableInterface> rubberDuck   = std::make_shared<QuackCounter>(std::make_shared<RubberDuck>());
-	std::cout << "\nDuck Simulator\n";
+	/* create all the ducks with a factory*/
+	DuckAbstractFactory duckFactory;
+	std::shared_ptr<QuackableInterface> mallardDuck  = factory->CreateMallardDuck();
+	std::shared_ptr<QuackableInterface> redHeadDuck = factory->CreateRedHeadDuck();
+	std::shared_ptr<QuackableInterface> duckCall     = factory->CreateDuckCall();
+	std::shared_ptr<QuackableInterface> rubberDuck = factory->CreateRubberDuck();
+	std::cout << "\nDuck Simulator with Abstract Factory\n";
 
 	/* pass each duck to the simulate function */
 	Simulate(mallardDuck);
-	Simulate(readHeadDuck);
+	Simulate(redHeadDuck);
 	Simulate(duckCall);
 	Simulate(rubberDuck);
 
@@ -59,4 +59,5 @@ void DuckSim::DuckSimulator::Simulate(std::shared_ptr<QuackableInterface> duck)
 {
 	duck->Quack(); // call the quack command
 }
+
 

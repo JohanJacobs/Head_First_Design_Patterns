@@ -7,7 +7,7 @@ namespace DuckSim
 	/*
 		A decorator to add a counter to the ducks. 
 		A duck class is wrapped so that the quack are counted.
-		the "GetQuacks" and "m_QuackCounter" is static function to be accessable in the program and not just via a decorated  duck.
+		the "GetQuacks" and "m_QuackCounter" is static function to be accessible in the program and not just via a decorated  duck.
 	*/
 	class QuackCounter :public QuackableInterface
 	{
