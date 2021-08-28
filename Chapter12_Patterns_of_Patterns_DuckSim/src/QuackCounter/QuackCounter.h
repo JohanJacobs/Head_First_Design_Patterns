@@ -18,6 +18,15 @@ namespace DuckSim
 		// static function to return the amount of quacks made 
 		static uint32_t GetQuacks();
 
+
+		void RegisterObserver(std::shared_ptr<Observer> observer) override;
+
+
+		void NotifyObservers() override;
+
+
+		std::string GetName() override;
+
 	private:
 		std::shared_ptr<QuackableInterface> m_Duck;
 		static uint32_t m_QuackCounter;

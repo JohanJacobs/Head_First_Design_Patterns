@@ -13,6 +13,13 @@ namespace DuckSim
 		void Add(std::shared_ptr<QuackableInterface> quacker);
 		void Quack();
 
+		void RegisterObserver(std::shared_ptr<Observer> observer) override;
+
+		void NotifyObservers() override;
+
+
+		std::string GetName() override;
+
 	private:
 		std::vector<std::shared_ptr<QuackableInterface>> m_Ducks;
 	};

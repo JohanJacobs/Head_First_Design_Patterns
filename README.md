@@ -98,7 +98,7 @@
 
 ## Chapter 9 - Composite Pattern
 >**Allows you to compose objects into 'tree data structures' to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly**
->- Build structures of objects in the form of tress that contain both compositions of objects and individual objects as nodes.
+>- Build structures of objects in the form of trees that contain both compositions of objects and individual objects as nodes.
 >- Apply the same operations over both composites and individual
 
 ## Chapter 10 - State Pattern 
@@ -112,6 +112,11 @@
 >- ProtectionProxy: Controls access to the methods of an object based on the caller
 >- Proxy and Decorator patterns have the same structure but differ in intent.  Proxy Control Access and Decorate adds Behaviour
 >- Proxy, as a wrapper, will increase the number of classes.
+
+## Chapter 12 - Patterns of Patterns (Compound Patterns)
+>**A compound Pattern combines two or more patterns into a solution that solves a recurring or general problem.**
+>- Patterns are often used together and combined within the same design solution.
+>- A compound pattern combines two or more patterns into a solution that sovles a recurring or general problem
 
 ## OO Principles
 

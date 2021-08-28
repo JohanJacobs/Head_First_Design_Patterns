@@ -11,6 +11,8 @@
 // factory 
 #include "CountingDuckAbstractFactory/CountingDuckAbstractFactory.h"
 
+#include "Quackologist/Quackologist.h"
+
 DuckSim::DuckSimulator::DuckSimulator()
 {
 	auto factory = std::make_shared<CountingDuckAbstractFactory>();
@@ -35,7 +37,7 @@ void DuckSim::DuckSimulator::Simulate(std::shared_ptr<DuckAbstractFactoryInterfa
 	std::shared_ptr<GooseAdapter> gooseAdapter = std::make_shared<GooseAdapter>(goose);
 	
 
-	std::cout << "\n\nDuck Simulator with Composite - Flocks\n";
+	std::cout << "\n\nDuck Simulator with Observer \n";
 
 	// normal flock of ducks.
 	std::shared_ptr<Flock> flockOfDucks = std::make_shared<Flock>();
@@ -55,6 +57,8 @@ void DuckSim::DuckSimulator::Simulate(std::shared_ptr<DuckAbstractFactoryInterfa
 	// Add a collection to the composite pattern
 	flockOfDucks->Add(flockOfMallardDucks); 
 
+	std::shared_ptr<Quackologist> quackOlogist = std::make_shared<Quackologist>();
+	mallardDuck->RegisterObserver(quackOlogist);
 
 	std::cout << "\nDuck Simulator: Whole flock Simulation\n";
 	Simulate(flockOfDucks);
