@@ -6,9 +6,10 @@
 
 >The O'Reilly Head First - Design Patterns examples for C++
 
-  
-  
-  
+>Design Pattern: A Pattern is a solution to a problem in a context 
+>- Context: situation in which the pattern applies, this should be a recurring situation.
+>- Problem: goal you are trying to achieve in this context, include constraints that occur in the context.
+>- Solution: general design that anyone can apply which resolves the goal and constraints.
 
 ## Chapter 1 - Strategy Pattern
 
@@ -117,6 +118,10 @@
 >**A compound Pattern combines two or more patterns into a solution that solves a recurring or general problem.**
 >- Patterns are often used together and combined within the same design solution.
 >- A compound pattern combines two or more patterns into a solution that sovles a recurring or general problem
+>- MVC paradigm for factoring code into dunctional segments.
+>- Model: Object represent applicaiton's purpouse (data, logic and state).
+>- View: Provide a presentaiton of the model.
+>- Controller: Takes input and figures out what it means to the model.
 
 ## OO Principles
 
