@@ -6,8 +6,8 @@ namespace MVC
 	DJView::DJView(ControllerInterface* controller, BeatModelInterface* model) :m_Controller{ controller }, m_Model{ model }
 	{
 		// just make this pointers.
-		//m_Model->RegisterBeatObserver(this);
-		//m_Model->RegisterBPMObserver(this);
+		m_Model->RegisterBeatObserver(this);
+		m_Model->RegisterBPMObserver(this);
 	}
 
 	void DJView::UpdateBPM()
@@ -15,17 +15,17 @@ namespace MVC
 		int bpm = m_Model->GetBPM();
 		if (bpm == 0)
 		{
-			std::cout << "Offline\n";
+			std::cout << "DJView::UpdateBPM(): Offline\n";
 		}
 		else
 		{
-			std::cout << "Current BPM: " << bpm << "\n";
+			std::cout << "DJView::UpdateBPM(): Current BPM: " << bpm << "\n";
 		}
 	}
 
 	void DJView::UpdateBeat()
 	{
-		std::cout << "BeatBar set value to 100\n";
+		std::cout << "DJView::UpdateBPM(): BeatBar set value to 100\n";
 	}
 
 	void DJView::ActionSetBPM(int bpm)

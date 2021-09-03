@@ -1,13 +1,13 @@
 #include "BeatModel.h"
 #include <iostream>
-
+#include <iostream>
 namespace MVC
 {
 
 	void BeatModel::Initialize()
 	{
-		std::cout << "Setting up Midi\n";
-		std::cout << "Build Track and Start\n";
+		std::cout << "BeatModel::Initialize(): Setting up Midi\n";
+		std::cout << "BeatModel::Initialize(): Build Track and Start\n";
 	}
 
 	void BeatModel::On()
@@ -23,7 +23,7 @@ namespace MVC
 	void BeatModel::SetBPM(int bpm)
 	{
 		m_BPM = bpm;
-		std::cout << "Setting Beats per minute to " << bpm << "\n";
+		std::cout << "BeatModel::SetBPM: Setting Beats per minute to " << bpm << "\n";
 		NotifyObservers();
 	}
 
@@ -44,6 +44,7 @@ namespace MVC
 
 	void BeatModel::NotifyObservers()
 	{
+		std::cout << "void BeatModel::NotifyObservers()\n";
 		for (auto o: m_BeatObservers)
 		{
 			o->UpdateBeat();
@@ -52,6 +53,7 @@ namespace MVC
 
 	void BeatModel::NotifyBPMObservers()
 	{
+		std::cout << "void BeatModel::NotifyBPMObservers()\n";
 		for (auto o : m_BPMObservers)
 		{
 			o->UpdateBPM();
@@ -60,12 +62,12 @@ namespace MVC
 
 	void BeatModel::RegisterBPMObserver(BPMObserver* o)
 	{
-		throw std::logic_error("The method or operation is not implemented.");
+		m_BPMObservers.push_back(o);
 	}
 
 	void BeatModel::RemoveObserver(BPMObserver* o)
 	{
-		throw std::logic_error("The method or operation is not implemented.");
+		std::cout << "void BeatModel::RemoveObserver(BPMObserver* o): Not implemented - void BeatModel::RemoveObserver(BPMObserver* o)\n";
 	}
 
 	BeatModel::~BeatModel()
